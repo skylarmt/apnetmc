@@ -1,12 +1,21 @@
+function hideall() {
+	$('#home').css('visibility','hidden');
+	$('#chat').css('visibility','hidden');
+	$('#about').css('visibility','hidden');
+}
+
 var app = {
-    initialize: function() {
-        $("#link_chat").click(function(){
-            $('#page').load('inc/chat.html');
-            return false;
-        });
+    	initialize: function() {
+    		$('#loading').css('visibility','hidden');
+        	$("#link_chat").click(function(){
+        		hideall();
+            		$('#chat').css('visibility','visible');
+            		return false;
+        	});
 		$("#link_home").click(function(){
-            window.location.reload();
-            return false;
-        });
-		},
+			hideall();
+	            	$('#chat').css('visibility','visible');
+        	    	return false;
+        	});
+	},
 };
