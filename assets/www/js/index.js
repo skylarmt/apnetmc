@@ -1,7 +1,7 @@
 function hideall() {
 	$('#home').css('display','none');
 	$('#chat').css('display','none');
-	$('#about').css('display','none');
+	$('#help').css('display','none');
 	$('#loading').css('display','none');
 }
 
@@ -17,6 +17,11 @@ var app = {
 		$("#link_home").click(function(){
 			hideall();
 	            	$('#home').css('display','initial');
+        	    	return false;
+        	});
+        	$("#link_help").click(function(){
+			hideall();
+	            	$('#help').css('display','initial');
         	    	return false;
         	});
 	},
