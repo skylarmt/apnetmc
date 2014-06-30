@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>JOTA JOTI</title> 
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> 
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+		<style type="text/css">
+			html, body, #main {
+				height: 100%;
+			}
+			
+			body {
+				/*overflow: hidden;*/
+			}
+			
+			.page {
+				border: 0;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				display: none;
+			}
+			
+			#loadingp {
+				font-size: 120%;
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			#help {
+				margin-left: 5px;
+			}
+		</style>
+	</head> 
+	<body> 
+	
+		<div id="main" data-role="page" data-theme="b">
+
+			<div data-role="header">
+				<h1 id="link_home"><a href="index.html" style="color: white; text-decoration: none;">JOTA-JOTI</a></h1>
+			</div>
+			
+			<div data-role="content" id="loading">
+				<p id="loadingp">App loading...</p>
+			</div>
+			
+			<div class="page" data-role="content" id="home">	
+				<ul data-role="listview" data-inset="true">
+					<li><a id="link_chat" href="#">Chat</a></li>
+					<li><a id="link_help" href="#">Help & About</a></li>
+				</ul>
+			</div>
+			
+			<div class="page" data-role="content" id="chat">
+				<iframe src="http://107.170.202.223:7778/" style="width: 100%; height: 100%; margin: 0; padding: 0; border: 0;" frameborder="0" seamless></iframe>
+			</div>
+			
+			<div class="page" data-role="content" id="help">
+				<h2>Help Tips:</h2>
+				<p>
+					Turn your device on its side to see the IRC users in the channel.
+					<br />Tap the top bar to get to the menu screen.
+				</p>
+				<h2>About this App</h2>
+				<p>Application copyright &copy; 2014 <a onclick="window.open('http://apocalypselabs.net/', '_system');">Apocalypse Laboratories</a>.</p>
+				<h3>Credits:</h3>
+				<p>
+				Embedded IRC client is based on KiwiIRC.
+				<br />Some images derived from public domain graphics on OpenClipart.
+				<br />Thanks to Stack Overflow users for their help.
+				</p>
+			</div>
+
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+		<script type="text/javascript" src="js/cordova.js"></script>
+        	<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+            		app.initialize();
+        	</script>
+	</body>
+</html>
