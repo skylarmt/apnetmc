@@ -1,25 +1,21 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-		<title>My Page</title> 
+		<title>JOTA JOTI</title> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
 	</head> 
 	<body> 
 	
-		<div data-role="page" data-theme="b">
+		<div id="page" data-role="page" data-theme="b">
 
 			<div data-role="header">
-				<h1>jQuery Mobile App</h1>
+				<h1>JOTA-JOTI</h1>
 			</div>
 
 			<div data-role="content">	
-				<ul data-role="listview" data-inset="true" data-filter="true">
-					<li><a href="#">Acura</a></li>
-					<li><a href="#">Audi</a></li>
-					<li><a href="#">BMW</a></li>
-					<li><a href="#">Cadillac</a></li>
-					<li><a href="#">Ferrari</a></li>
+				<ul data-role="listview" data-inset="true">
+					<li><a id="link_chat" href="#" data-url="chat" data-navi="yes">Chat</a></li>
 				</ul>
 			</div>
 
@@ -28,10 +24,9 @@
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
 		<script type="text/javascript" src="js/cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        	<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
-            app.initialize();
-        </script>
-        		
+            		app.initialize();
+        	</script>
 	</body>
 </html>
