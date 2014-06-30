@@ -2,11 +2,13 @@ function hideall() {
 	$('#home').css('visibility','hidden');
 	$('#chat').css('visibility','hidden');
 	$('#about').css('visibility','hidden');
+	$('#loading').css('visibility','hidden');
 }
 
 var app = {
     	initialize: function() {
-    		$('#loading').css('visibility','hidden');
+    		hideall();
+    		$('#home').css('visibility','visible');
         	$("#link_chat").click(function(){
         		hideall();
             		$('#chat').css('visibility','visible');
@@ -14,7 +16,7 @@ var app = {
         	});
 		$("#link_home").click(function(){
 			hideall();
-	            	$('#chat').css('visibility','visible');
+	            	$('#home').css('visibility','visible');
         	    	return false;
         	});
 	},
