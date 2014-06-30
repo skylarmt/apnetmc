@@ -17,7 +17,7 @@
        under the License.
  */
 
-package net.apocalypselabs.jotajoti;
+package net.apocalypselabs.apnetmc;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
