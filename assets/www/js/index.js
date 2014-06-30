@@ -4,5 +4,9 @@ var app = {
             $('#page').load('inc/chat.html');
             return false;
         });
-    },
+		$("#link_home").click(function(){
+            window.location.reload();
+            return false;
+        });
+		},
 };
