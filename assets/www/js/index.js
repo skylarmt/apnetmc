@@ -2,6 +2,7 @@ function hideall() {
 	$('#home').css('display','none');
 	$('#chat').css('display','none');
 	$('#help').css('display','none');
+	$('#news').css('display','none');
 	$('#players').css('display','none');
 	$('#loading').css('display','none');
 }
@@ -25,6 +26,11 @@ var app = {
 	            	$('#players').css('display','initial');
         	    	return false;
         	});
+        	$("#link_news").click(function(){
+			hideall();
+	            	$('#news').css('display','initial');
+        	    	return false;
+        	});
         	$("#link_help").click(function(){
 			hideall();
 	            	$('#help').css('display','initial');
@@ -32,6 +38,10 @@ var app = {
         	});
         	$("#prelist").click(function(){
         		loadplayers();
+        	    	return false;
+        	});
+        	$("#nrelist").click(function(){
+        		loadnews();
         	    	return false;
         	});
 	},
@@ -51,3 +61,18 @@ xmlhttp.send();
 }
 
 loadplayers();
+
+function loadnews() {
+var xmlhttp;
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("nlist").innerHTML = xmlhttp.responseText;
+        $("#nlist").listview("refresh");
+    }
+}
+xmlhttp.open("GET", "http://apnetmc.tk/news/index.php", true);
+xmlhttp.send();
+}
+
+loadnews();
