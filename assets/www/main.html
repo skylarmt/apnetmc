@@ -3,7 +3,9 @@
 	<head> 
 		<title>Apocalypse Network</title> 
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> 
-		<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+		<link rel="stylesheet" href="css/aplabs.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
 		<script src="http://mc.apocalypselabs.net/yshout/js/jquery.js" type="text/javascript"></script>
 		<script src="http://mc.apocalypselabs.net/yshout/js/yshout.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="http://mc.apocalypselabs.net/yshout/example/css/mobile.yshout.css" />
@@ -16,10 +18,11 @@
 			html, body, #main {
 				height: 100%;
 				margin: 0;
+				color: white;
 			}
 			
-			body {
-				/*overflow: hidden;*/
+			#main {
+				background-image: url('img/dirt.png');
 			}
 			
 			.page {
@@ -35,6 +38,10 @@
 				font-weight: bold;
 				text-align: center;
 			}
+
+			.menulist {
+				background-image: url('img/grass.png');
+			}
 			
 			#help {
 				margin-left: 5px;
@@ -43,10 +50,11 @@
 	</head> 
 	<body> 
 	
-		<div id="main" data-role="page" data-theme="b">
+		<div id="main" data-role="page" data-theme="a">
 
 			<div data-role="header">
-				<h1 id="link_home"><a href="index.html" style="color: white; text-decoration: none;">Apocalypse Network</a></h1>
+				<h1 id="link_home"><a href="index.html" style="color: white; text-decoration: none;">Apocalypse Labs</a></h1>
+				<h2>Minecraft</h2>
 			</div>
 			
 			<div data-role="content" id="loading">
@@ -55,8 +63,8 @@
 			
 			<div class="page" data-role="content" id="home">	
 				<ul data-role="listview" data-inset="true">
-					<li><a id="link_chat" href="#">Website Chat</a></li>
-					<li><a id="link_help" href="#">About</a></li>
+					<li class="menulist"><a id="link_chat" href="#">Website Chat</a></li>
+					<li class="menulist"><a id="link_help" href="#">About</a></li>
 				</ul>
 			</div>
 			
@@ -71,8 +79,8 @@
 
 		</div>
 		
-		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/cordova.js"></script>
         	<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
