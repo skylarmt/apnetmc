@@ -38,3 +38,5 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "http://apnetmc.tk/query/view.php", true);
 xmlhttp.send();
 }
+
+loadplayers();
