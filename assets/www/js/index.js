@@ -30,6 +30,10 @@ var app = {
 	            	$('#help').css('display','initial');
         	    	return false;
         	});
+        	$("#prelist").click(function(){
+        		loadplayers();
+        	    	return false;
+        	});
 	},
 };
 
