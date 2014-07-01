@@ -43,6 +43,7 @@ xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         document.getElementById("plist").innerHTML = xmlhttp.responseText;
+        $("#plist").listview("refresh");
     }
 }
 xmlhttp.open("GET", "http://apnetmc.tk/query/view.php", true);
