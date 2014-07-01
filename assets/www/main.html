@@ -64,12 +64,19 @@
 			<div class="page" data-role="content" id="home">	
 				<ul data-role="listview" data-inset="true">
 					<li class="menulist"><a id="link_chat" href="#">Website Chat</a></li>
+					<li class="menulist"><a id="link_players" href="#">Player List</a></li>
 					<li class="menulist"><a id="link_help" href="#">About</a></li>
 				</ul>
 			</div>
 			
 			<div class="page" data-role="content" id="chat">
 				<div id="yshout" style="text-align:left"></div>
+			</div>
+			
+			<div class="page" data-role="content" id="players">
+				<h2>Online Players:</h2>
+				<a href="#" data-role="button" data-icon="refresh" id="prelist">Reload List</a>
+				<div id="plist"></div>
 			</div>
 			
 			<div class="page" data-role="content" id="help">
