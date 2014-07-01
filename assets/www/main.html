@@ -20,6 +20,13 @@
 				color: white;
 			}
 			
+			#header {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+			}
+			
 			#main {
 				background-image: url('img/dirt.png');
 			}
@@ -55,7 +62,7 @@
 	
 		<div id="main" data-role="page" data-theme="a">
 
-			<div data-role="header">
+			<div data-role="header" id="header">
 				<h1 id="link_home"><a href="index.html" style="color: white; text-decoration: none;">Apocalypse Labs</a></h1>
 				<h2>Minecraft</h2>
 			</div>
@@ -87,6 +94,7 @@
 				<h2>Network News:</h2>
 				<a href="#" data-role="button" data-icon="refresh" id="nrelist">Refresh News</a>
 				<ul data-role="listview" data-inset="false" id="nlist"></ul>
+				<br />
 			</div>
 			
 			<div class="page" data-role="content" id="help">
