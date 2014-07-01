@@ -26,3 +26,15 @@ var app = {
         	});
 	},
 };
+
+function loadplayers() {
+var xmlhttp;
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("players").innerHTML = xmlhttp.responseText;
+    }
+}
+xmlhttp.open("GET", "http://apnetmc.tk/query/view.php", true);
+xmlhttp.send();
+}
