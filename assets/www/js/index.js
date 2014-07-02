@@ -1,6 +1,7 @@
 function hideall() {
 	$('#home').css('display','none');
 	$('#chat').css('display','none');
+	$('#ircchat').css('display','none');
 	$('#help').css('display','none');
 	$('#news').css('display','none');
 	$('#players').css('display','none');
@@ -34,6 +35,11 @@ var app = {
         	$("#link_help").click(function(){
 			hideall();
 	            	$('#help').css('display','initial');
+        	    	return false;
+        	});
+        	$("#link_irc").click(function(){
+			hideall();
+	            	$('#ircchat').css('display','initial');
         	    	return false;
         	});
         	$("#prelist").click(function(){
