@@ -82,3 +82,14 @@ xmlhttp.send();
 }
 
 loadnews();
+
+$("#ircchat").dunirc({
+      server: "ws://107.170.202.223:8089",
+      nick: "",
+      channel: "#minecraft",
+      userlist: "userlist",
+      content: "content",
+      msg: ".msg",
+      topic: "topic",
+      scroll: true
+  });
