@@ -6,14 +6,6 @@
 		<link rel="stylesheet" href="css/aplabs.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
-		<script src="http://mc.apocalypselabs.net/yshout/js/jquery.js" type="text/javascript"></script>
-		<script src="http://mc.apocalypselabs.net/yshout/js/yshout.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="http://mc.apocalypselabs.net/yshout/example/css/mobile.yshout.css" />
-		<script type="text/javascript">
-   			new YShout({
-				yPath: 'http://mc.apocalypselabs.net/yshout/'
-   			});
-		</script>
 		<style type="text/css">
 			html, body, #main, .ui-body-c {
 				margin: 0;
@@ -98,9 +90,8 @@
 			<div class="page" data-role="content" id="home">
 				<div id="quote"></div>
 				<ul data-role="listview" data-inset="true">
-					<li class="menulist"><a id="link_irc" href="#">Minecraft Chat</a></li>
-					<li class="menulist"><a id="link_chat" href="#">Website Chat</a></li>
-					<li class="menulist"><a id="link_news" href="#">News</a></li>
+					<li class="menulist"><a id="link_chat" href="#">Minecraft Chat</a></li>
+					<li class="menulist"><a id="link_news" href="#">Server News</a></li>
 					<li class="menulist"><a id="link_players" href="#">Player List</a></li>
 					<li class="menulist"><a id="link_help" href="#">About</a></li>
 				</ul>
@@ -108,7 +99,53 @@
 			</div>
 			
 			<div class="page" data-role="content" id="chat">
-				<iframe src="http://apnetmc.tk/chat" width="100%" height="100%" frameborder="0"></iframe>
+				        <table width="90%">
+        <tr>
+        <td><div id="menu">
+                <p class="welcome">Your name: <input type="text" id="name"></b></p>
+                <div style="clear:both"></div>
+        </div></td>
+        </tr>
+        <tr height="100%">
+        <td height="100%" width="100%"><div id="chatbox"><i>Loading...</i></div></td>
+        </tr>
+        <tr>
+        <td><form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" size="63" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+        </form></td>
+        </tr>
+        </table>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+        //If user submits the form
+        $("#submitmsg").click(function(){
+                var clientmsg = $("#usermsg").val();
+                var username = document.getElementById('name').value;
+                $.post("http://mcapp.tk/chat/post.php?name="+username, {text: clientmsg});
+                $("#usermsg").attr("value", "");
+                return false;
+        });
+
+        //Load the file containing the chat log
+        function loadLog(){
+                var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+                $.ajax({
+                        url: "http://mcapp.tk/chat/formatstrip.php",
+                        cache: false,
+                        success: function(html){
+                                $("#chatbox").html(html); //Insert chat log into the #chatbox div
+                                var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+                                if(newscrollHeight > oldscrollHeight){
+                                        $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                                }
+                        },
+                });
+        }
+        setInterval (loadLog, 1500);    //Reload file every 1.5 seconds
+});
+</script>
 			</div>
 			
 			<div class="page" data-role="content" id="ircchat">
