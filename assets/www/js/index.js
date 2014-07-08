@@ -52,7 +52,7 @@ var app = {
         	});
         	$("#submitmsg").click(function(){
                 	var clientmsg = $("#usermsg").val();
-                	var username = document.getElementById('name').value;
+                	var username = document.getElementById('cusernname').value;
                 	$.post("http://mcapp.tk/chat/post.php?name="+username, {text: clientmsg});
                 	$("#usermsg").attr("value", "");
                 return false;
