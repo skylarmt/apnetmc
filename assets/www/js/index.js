@@ -53,9 +53,12 @@ var app = {
         	$("#submitmsg").click(function(){
                 	var clientmsg = $("#usermsg").val();
                 	var username = document.getElementById('cusernname').value;
-                	$.post("http://apnetmc.tk/chat/post.php?name="+username, {text: clientmsg});
-                	$("#usermsg").attr("value", "");
-                return false;
+                	var xmlhttp;
+			xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", "http://apnetmc.tk/chat/apppost.php?name="+username+"&msg="+clientmsg, true);
+			xmlhttp.send();
+			document.getElementById('usermsg').value = "";
+                	return false;
         	});
 	},
 };
