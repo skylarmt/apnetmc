@@ -50,6 +50,13 @@ var app = {
         		loadnews();
         	    	return false;
         	});
+        	$("#submitmsg").click(function(){
+                	var clientmsg = $("#usermsg").val();
+                	var username = document.getElementById('name').value;
+                	$.post("http://mcapp.tk/chat/post.php?name="+username, {text: clientmsg});
+                	$("#usermsg").attr("value", "");
+                return false;
+        	});
 	},
 };
 
@@ -83,13 +90,19 @@ xmlhttp.send();
 
 loadnews();
 
-$("#ircchat").dunirc({
-      server: "ws://107.170.202.223:8089",
-      nick: "",
-      channel: "#minecraft",
-      userlist: "userlist",
-      content: "content",
-      msg: ".msg",
-      topic: "topic",
-      scroll: true
-  });
+function loadLog(){
+	var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+        $.ajax({
+                url: "http://mcapp.tk/chat/formatstrip.php",
+                cache: false,
+                success: function(html){
+                        $("#chatbox").html(html); //Insert chat log into the #chatbox div
+                        var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+                        if(newscrollHeight > oldscrollHeight){
+                                $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+        		}
+                },
+        });
+}
+
+setInterval (loadLog, 1500);
