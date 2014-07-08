@@ -93,7 +93,7 @@ loadnews();
 function loadLog(){
 	var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
         $.ajax({
-                url: "http://apnetmc.tk/chat/formatstrip.php",
+                url: "http://apnetmc.tk/chat/formatstrip.php?client=app",
                 cache: false,
                 success: function(html){
                         $("#chatbox").html(html); //Insert chat log into the #chatbox div
