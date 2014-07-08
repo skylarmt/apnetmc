@@ -53,7 +53,7 @@ var app = {
         	$("#submitmsg").click(function(){
                 	var clientmsg = $("#usermsg").val();
                 	var username = document.getElementById('cusernname').value;
-                	$.post("http://mcapp.tk/chat/post.php?name="+username, {text: clientmsg});
+                	$.post("http://apnetmc.tk/chat/post.php?name="+username, {text: clientmsg});
                 	$("#usermsg").attr("value", "");
                 return false;
         	});
@@ -93,7 +93,7 @@ loadnews();
 function loadLog(){
 	var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
         $.ajax({
-                url: "http://mcapp.tk/chat/formatstrip.php",
+                url: "http://apnetmc.tk/chat/formatstrip.php",
                 cache: false,
                 success: function(html){
                         $("#chatbox").html(html); //Insert chat log into the #chatbox div
