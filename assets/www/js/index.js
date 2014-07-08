@@ -51,8 +51,8 @@ var app = {
         	    	return false;
         	});
         	$("#submitmsg").click(function(){
-                	var clientmsg = $("#usermsg").val();
-                	var username = document.getElementById('cusernname').value;
+                	var clientmsg = encodeURIComponent(document.getElementById('usermsg').value);
+                	var username = encodeURIComponent(document.getElementById('cusername').value);
                 	var xmlhttp;
 			xmlhttp = new XMLHttpRequest();
 			xmlhttp.open("GET", "http://apnetmc.tk/chat/apppost.php?name="+username+"&msg="+clientmsg, true);
