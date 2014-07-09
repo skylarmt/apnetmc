@@ -51,21 +51,30 @@ var app = {
         	    	return false;
         	});
         	$("#submitmsg").click(function(){
-                	var clientmsg = encodeURIComponent(document.getElementById('usermsg').value);
-                	var username = encodeURIComponent(document.getElementById('cusername').value);
-                	if (username != '' && clientmsg != '') {
-                	var xmlhttp;
-			xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET", "http://apnetmc.tk/chat/apppost.php?name="+username+"&msg="+clientmsg, true);
-			xmlhttp.send();
-			document.getElementById('usermsg').value = "";
-                	} else {
-                		alert('Please fill in a username and a message.');
-                	}
-                	return false;
+        		sendChat();
+        		return false;
+        	});
+        	$("#sendchatmsg").submit(function(){
+        		sendChat();
+        		return false;
         	});
 	},
 };
+
+function sendChat() {
+	var clientmsg = encodeURIComponent(document.getElementById('usermsg').value);
+	var username = encodeURIComponent(document.getElementById('cusername').value);
+	if (username != '' && clientmsg != '') {
+	var xmlhttp;
+	xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", "http://apnetmc.tk/chat/apppost.php?name="+username+"&msg="+clientmsg, true);
+	xmlhttp.send();
+	document.getElementById('usermsg').value = "";
+	} else {
+	alert('Please fill in a username and a message.');
+        }
+        return false;
+}
 
 function loadplayers() {
 var xmlhttp;
