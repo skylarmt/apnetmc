@@ -60,7 +60,7 @@ var app = {
 			xmlhttp.send();
 			document.getElementById('usermsg').value = "";
                 	} else {
-                		navigator.alert('Please fill in a username and a message.', null, 'Invalid input', 'OK');
+                		alert('Please fill in a username and a message.');
                 	}
                 	return false;
         	});
