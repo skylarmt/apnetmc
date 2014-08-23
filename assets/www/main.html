@@ -96,6 +96,18 @@
 					<li class="menulist"><a id="link_help" href="#">About</a></li>
 				</ul>
 				<p style="font-size: 80%; text-align: center;"><i>Protip:  To return to this screen, tap the top bar of the app.</i></p>
+				<div id="smaatoad" style="padding: 0px"></div>
+				<script id="smaatoAdDisplay" src="http://soma.smaato.net/oapi/js/smaatoAdDisplay.js"></script>
+				<script>
+					(function() {
+						var request = new SomaRequest();
+						request.adSpaceID = 65841970;
+						request.publisherID = 923881695;
+						/*insert additional targeting data here */
+						SomaTag.requestAd(request);
+					})();
+				</script>
+
 			</div>
 			
 			<div class="page" data-role="content" id="chat">
